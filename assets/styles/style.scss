@@ -1,0 +1,402 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@400;600;700;800&family=Work+Sans:wght@400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 5rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  --first-clr: #d31f20;
+  --second: #fff;
+  --body-bg: #033073;
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Raleway", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second);
+  background-color: var(--body-bg);
+  overflow-x: hidden !important;
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  background-color: var(--first-clr);
+  color: var(--second-color);
+}
+/*===== CLASS CSS ===== */
+a.buy-btn {
+  padding: 15px 32px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(9, 50, 67, 0.16);
+  border-radius: 4px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: #0f1375;
+  display: block;
+  width: max-content;
+  text-transform: capitalize;
+}
+
+header {
+  width: 100%;
+  // background-color: black;
+  padding-block: 5px;
+  z-index: 100;
+  position: fixed;
+
+  nav {
+    .nav-logo {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: #ffffff;
+    }
+    ul.nav-ul {
+      transition: 0.1s all linear;
+      z-index: 90;
+      a {
+        font-family: "Work Sans", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+      }
+    }
+
+    .display-ul {
+      bottom: -95vh !important;
+    }
+
+    @media (max-width: 767px) {
+      .nav-logo {
+        font-size: 20px;
+        line-height: 23px;
+      }
+      ul.nav-ul {
+        position: absolute;
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        background: var(--body-bg);
+        // backdrop-filter: blur(150px);
+        left: 0;
+        bottom: 100vh;
+
+        li {
+          a {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+          }
+        }
+      }
+      a.buy-btn {
+        display: none;
+      }
+    }
+    a.buy-btn {
+      padding: 15px 32px;
+      background: #ffffff;
+      box-shadow: 0px 4px 8px rgba(9, 50, 67, 0.16);
+      border-radius: 4px;
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 140%;
+      color: #0f1375;
+    }
+    i {
+      transition: transform 0.3s linear;
+      font-size: 35px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+#hero {
+  // min-height: 100vh;
+  width: 100%;
+  background-color: var(--body-bg);
+  background: url(../images/bg.png) center center no-repeat;
+  background-size: cover;
+  padding-block: 170px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding-block: 120px 200px;
+  }
+
+  .pt-abso {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      max-width: 13rem;
+      opacity: 0.8;
+    }
+  }
+
+  .container {
+    z-index: 5;
+    h1.title {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 80px;
+      text-align: center;
+      color: #ffffff;
+
+      @media (max-width: 768px) {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+    p.info {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      text-align: center;
+      color: #ffffff;
+      max-width: 600px;
+    }
+    .hero-btn {
+      a.buy-btn:first-child {
+        color: #030305;
+      }
+      a.buy-btn:last-child {
+        background-color: transparent;
+        color: var(--second);
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+
+  #about {
+    width: 100%;
+    background-color: var(--body-bg);
+    padding-block: 50px;
+
+    h2.head {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 180%;
+      color: #ffffff;
+    }
+    h1.title {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 120%;
+      color: #ffffff;
+
+      @media (max-width: 700px) {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    .inrow {
+      div {
+        height: 72px;
+        filter: drop-shadow(0px 4px 8px rgba(9, 50, 67, 0.16));
+        background-color: var(--second);
+        p {
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 180%;
+          color: #081f28;
+        }
+      }
+
+      div:before {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 72px;
+        left: 0;
+      }
+      .d1:before {
+        background: #ea4335;
+      }
+      .d2:before {
+        background: #35ea47;
+      }
+      .d3:before {
+        background: #9a35ea;
+      }
+    }
+  }
+
+  #tokenomics {
+    width: 100%;
+    padding-block: 50px;
+    h2.head {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 180%;
+      color: #ffffff;
+    }
+    h1.title {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 120%;
+      color: #ffffff;
+
+      @media (max-width: 700px) {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 180%;
+      }
+    }
+
+    ul {
+      // background: #000;
+      li {
+        font-family: "Work Sans", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 140%;
+        color: #ffffff;
+
+        @media (max-width: 700px) {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+      li:before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 100px;
+        z-index: 2;
+      }
+      li:nth-child(1):before {
+        background: #0062ff;
+      }
+      li:nth-child(2):before {
+        background: #ffd200;
+      }
+      li:nth-child(3):before {
+        background: #c4c4c4;
+      }
+      li:nth-child(4):before {
+        background: #2bbf7f;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  // background-color: red;
+  padding-block: 50px;
+  .cpy {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: #ffffff;
+  }
+  a {
+    font-family: "Work Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+  i {
+    font-size: 25px;
+  }
+}
