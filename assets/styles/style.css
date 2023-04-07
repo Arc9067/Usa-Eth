@@ -243,6 +243,23 @@ header nav i:hover {
 main {
   width: 100%;
 }
+main #video {
+  padding-block: 50px;
+}
+main #video video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-inline: auto;
+  display: block;
+}
+main #video video {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  main #video video {
+    width: 60%;
+  }
+}
 main #about {
   width: 100%;
   background-color: var(--body-bg);
